@@ -5,6 +5,6 @@ import foodURLschema from "../schemas/foodURLSchema.js";
 
 const clarifaiRouter = Router();
 
-clarifaiRouter.get("/clarifai/food",schemaValidationMiddleware(foodURLschema), clarifaiController.getFoodDescriptionAndTags);
+clarifaiRouter.post("/clarifai/food",schemaValidationMiddleware(foodURLschema), clarifaiController.getFoodDescriptionAndTags);
 
 export default clarifaiRouter;
