@@ -64,7 +64,7 @@ export async function getFoodDescriptionAndTags(url: string) {
     .then(
       (result) =>
         (foodObject.data = JSON.parse(result).outputs[0].data.concepts.filter(
-          (data) => data.value >= 0.9
+          (data) => data.value >= 0.5
         ))
     )
     .catch((error) => console.log("erro fetch service", error));
