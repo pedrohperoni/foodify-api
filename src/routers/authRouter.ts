@@ -6,7 +6,7 @@ import userLoginSchema from "../schemas/userLoginSchema.js"
 
 const authRouter = Router();
 
-authRouter.post("/login", schemaValidationMiddleware(userLoginSchema), authController.login);
-authRouter.post("/token", validateJWT, authController.token)
+authRouter.post("/auth/login", schemaValidationMiddleware(userLoginSchema), authController.login);
+authRouter.post("/auth/token", validateJWT, authController.token)
 
 export default authRouter;
