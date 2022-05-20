@@ -42,7 +42,6 @@ model Posts {
 
 model PostsTags {
   id    Int     @id @default(autoincrement())
-  name  String  @unique
   postId Int
   tagId Int
   posts Posts @relation(fields: [postId], references: [id], onDelete: NoAction, onUpdate: NoAction)

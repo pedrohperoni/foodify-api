@@ -1,5 +1,6 @@
 import * as postRepository from "../repositories/postRespository.js";
 import * as tagsRepository from "../repositories/tagsRepository.js";
+import * as postsTagsRepository from "../repositories/postsTagsRepository.js"
 import { Posts } from "@prisma/client";
 
 type Post = Omit<Posts, "id">;
@@ -34,7 +35,15 @@ async function removeDuplicatesAndCreateNewTags(tags: string[]) {
   return tagIds;
 }
 
-async function populatePostsTags(postId: number, tags: string[]){
-
+async function populatePostsTags(postId: number, tagIds: number[]){
+   if(tagIds.length>0){
+      for(const tagId of tagIds){
+         const postTag = {
+            postId: postId,
+            tagId: tagId,
+         }
+         await postsTagsRepository.create(postTag);
+      }
+   }
 }
 
