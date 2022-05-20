@@ -12,3 +12,8 @@ export async function createPost(req: Request, res: Response) {
   await postService.createPost(post, tags);
   res.sendStatus(201);
 }
+
+export async function getPosts(req: Request, res: Response){
+   const posts = await postService.getPosts()
+   res.send(posts).status(200)
+}

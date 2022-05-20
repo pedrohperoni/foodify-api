@@ -10,5 +10,6 @@ postRouter.post(
   schemaValidationMiddleware(createPostSchema),
   postController.createPost
 );
+postRouter.get("/posts", postController.getPosts);
 
 export default postRouter;

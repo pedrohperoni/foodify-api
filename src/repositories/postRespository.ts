@@ -8,3 +8,22 @@ export async function createPost(post: Post){
       data: post
    })
 }
+
+export async function getPosts(){
+   return await prisma.posts.findMany({
+      select:{
+         name: true,
+         imageUrl: true,
+         users:{
+            select:{
+               name: true
+            }
+         },
+         postsTags:{
+            select:{
+               tags:true
+            }
+         }
+      }
+   })
+}
