@@ -11,6 +11,9 @@ export async function createPost(post: Post){
 
 export async function getPosts(){
    return await prisma.posts.findMany({
+      orderBy:[{
+         id: 'desc',
+      }],
       select:{
          name: true,
          imageUrl: true,
