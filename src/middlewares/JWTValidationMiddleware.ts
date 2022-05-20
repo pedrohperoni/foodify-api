@@ -10,6 +10,7 @@ export async function validateJWT(
   const authorization = req.headers.authorization;
   const token = authorization?.replace("Bearer ", "");
   const secretKey = process.env.JWT_SECRET;
+
   if (!token) throw { type: "not_found", message: "Token not found" };
 
   try {
