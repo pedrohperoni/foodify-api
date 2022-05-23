@@ -1,7 +1,7 @@
 import * as tagsRepository from "../repositories/tagsRepository.js";
 
-export async function getTop3Tags() {
-  const top3TagIdsAndScore = await tagsRepository.getTopTags(3);
+export async function getTop3Tags(number: number) {
+  const top3TagIdsAndScore = await tagsRepository.getTopTags(number);
   const tagIdArray = fixTagIdsObject(top3TagIdsAndScore);
   const tagArrayWithNamesAndScore = getTagNamesById(tagIdArray);
   return tagArrayWithNamesAndScore;
