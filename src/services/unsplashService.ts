@@ -32,7 +32,7 @@ export async function getRandomFace() {
   if (face.type === "error") {
     throw { type: "service_unavailable", message: "Error with Unsplash API" };
   }
-  const faceUrl = face.response.results[0].urls.raw;
+  const faceUrl = face.response.results[0].urls.small;
   return faceUrl;
 }
 
@@ -46,6 +46,6 @@ export async function getRandomBackground() {
   if (background.type === "error") {
     throw { type: "service_unavailable", message: "Error with Unsplash API" };
   }
-  const backgroundUrl = background.response.results[0].urls.raw;
+  const backgroundUrl = background.response.results[0].urls.regular;
   return backgroundUrl;
 }
