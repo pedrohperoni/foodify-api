@@ -13,6 +13,6 @@ export function errorHandlerMiddleware(
   if (error.type === "not_found") return res.sendStatus(404);
   if (error.type === "conflict") return res.sendStatus(409);
   if (error.type === "unprocessable_entity") return res.sendStatus(422);
-
+  if (error.type === "service_unavailable") return res.sendStatus(503);
   res.sendStatus(500);
 }

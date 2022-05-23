@@ -5,7 +5,7 @@ const userRegisterSchema = joi.object({
   password: joi.string().min(3).required(),
   name: joi.string().required(),
   confirmPassword: joi.ref("password"),
-
+  profileUrl: joi.string().uri(),
 });
 
 export default userRegisterSchema;
