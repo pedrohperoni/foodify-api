@@ -23,3 +23,4 @@ export async function update(id: number, userData: UserDataUpdate) {
     data: userData,
   });
 }
+

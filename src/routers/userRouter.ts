@@ -19,4 +19,6 @@ userRouter.put(
   userController.userUpdate
 );
 
+userRouter.get("/users/:userId", validateJWT, userController.getUser);
+
 export default userRouter;

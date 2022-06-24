@@ -49,3 +49,8 @@ async function findUserByEmail(email: string) {
 export async function updateUser(userData: UserDataUpdate, userId: number) {
   await userRepository.update(userId, userData);
 }
+
+export async function getUser(userId: number) {
+   const user = await userRepository.findUserById(userId)
+   return user
+}
