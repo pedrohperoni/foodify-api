@@ -6,49 +6,52 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("DATABASE_URL")
-}  
+}
 
 model Users {
-  id       Int         @id @default(autoincrement())
-  email    String @unique
-  password String
-  name      String
-  profileUrl String
+  id            Int     @id @default(autoincrement())
+  email         String  @unique
+  password      String
+  name          String
+  profileUrl    String
   backgroundUrl String
-  posts Posts[]
+  description   String
+  handle        String  @unique
+  posts         Posts[]
+
 
   @@map("users")
 }
 
 model Tags {
-  id   Int    @id @default(autoincrement())
-  name String @unique
+  id        Int         @id @default(autoincrement())
+  name      String      @unique
   postsTags PostsTags[]
 
-  @@map("tags")
 
+  @@map("tags")
 }
 
 model Posts {
-  id        Int           @id @default(autoincrement())
+  id        Int         @id @default(autoincrement())
   name      String
   imageUrl  String
   userId    Int
-  users     Users         @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users     Users       @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   postsTags PostsTags[]
 
   @@map("posts")
 }
 
 model PostsTags {
-  id    Int     @id @default(autoincrement())
+  id     Int   @id @default(autoincrement())
   postId Int
-  tagId Int
-  posts Posts @relation(fields: [postId], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  tags Tags @relation(fields: [tagId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  tagId  Int
+  posts  Posts @relation(fields: [postId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  tags   Tags  @relation(fields: [tagId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@map("postsTags")
 }

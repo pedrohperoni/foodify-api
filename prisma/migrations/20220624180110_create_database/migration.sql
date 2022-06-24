@@ -3,6 +3,11 @@ CREATE TABLE "users" (
     "id" SERIAL NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "profileUrl" TEXT NOT NULL,
+    "backgroundUrl" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "handle" TEXT NOT NULL,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
@@ -28,7 +33,6 @@ CREATE TABLE "posts" (
 -- CreateTable
 CREATE TABLE "postsTags" (
     "id" SERIAL NOT NULL,
-    "name" TEXT NOT NULL,
     "postId" INTEGER NOT NULL,
     "tagId" INTEGER NOT NULL,
 
@@ -39,10 +43,10 @@ CREATE TABLE "postsTags" (
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "tags_name_key" ON "tags"("name");
+CREATE UNIQUE INDEX "users_handle_key" ON "users"("handle");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "postsTags_name_key" ON "postsTags"("name");
+CREATE UNIQUE INDEX "tags_name_key" ON "tags"("name");
 
 -- AddForeignKey
 ALTER TABLE "posts" ADD CONSTRAINT "posts_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;

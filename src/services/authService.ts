@@ -21,6 +21,8 @@ export async function login(UserLoginRequest: UserLoginData ){
       name: user.name,
       profileUrl: user.profileUrl,
       backgroundUrl: user.backgroundUrl,
+      description: user.description,
+      handle: user.handle,
    }
    
    return loginData
