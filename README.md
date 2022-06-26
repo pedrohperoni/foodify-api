@@ -6,7 +6,7 @@
    <h3 align="center">A fullstack application build with <a href="https://reactjs.org/">React</a>, <a href="https://nodejs.org/en/">nodeJS</a> and <a href="https://www.prisma.io/ ">Prisma, </a>powered by <a href="https://www.clarifai.com/">Clarifai</a></br> Share your favourite dishes with the world</h3>
   
   <p align="center"><a href="https://yfidoof.vercel.app/">Live App </a>
-</br>This project has a front-end <a href="https://github.com/pedrohperoni/foodify">repository</a></p>
+</br>For a detailed info, check the front end <a href="https://github.com/pedrohperoni/foodify">repository</a></p>
   
 ## Technologies Used
 
