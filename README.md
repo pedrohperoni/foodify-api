@@ -1,12 +1,12 @@
 <br />
 <p align="center">
+For a detailed info, check the front end <a href="https://github.com/pedrohperoni/foodify">repository</a></br></br>
   <a href="https://github.com/pedrohperoni/foodify">
     <img src="https://raw.githubusercontent.com/pedrohperoni/foodify/main/github/logo.png" alt="Logo">
   </a>
    <h4 align="center">A fullstack application build with <a href="https://reactjs.org/">React</a>, <a href="https://nodejs.org/en/">nodeJS</a> and <a href="https://www.prisma.io/ ">Prisma, </a>powered by <a href="https://www.clarifai.com/">Clarifai</a></br> Share your favourite dishes with the world</h4>
   
-  <p align="center"><a href="https://yfidoof.vercel.app/">Live App </a>
-</br>For a detailed info, check the front end <a href="https://github.com/pedrohperoni/foodify">repository</a></p>
+  <p align="center"><a href="https://yfidoof.vercel.app/">Live App </a></p>
   
 ## Technologies Used
 
